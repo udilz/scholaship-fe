@@ -31,7 +31,7 @@ interface CheckboxProps extends TCheckBox, React.ComponentPropsWithRef<typeof Ra
 export const Checkbox = (props: CheckboxProps) => {
   return (
     <div className="flex items-center gap-1">
-      <RadixCheckbox.Root className={twMerge(checkBoxStyle({ ...props }), props.className)} defaultChecked id={props.label}>
+      <RadixCheckbox.Root className={twMerge(checkBoxStyle({ ...props }), props.className)} id={props.label}>
         <RadixCheckbox.Indicator>
           <Check size={10} />
         </RadixCheckbox.Indicator>
