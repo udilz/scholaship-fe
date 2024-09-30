@@ -1,35 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
 import { Bookmark } from 'lucide-react';
-
-const countries = [
-  { value: 'indonesa', label: 'Indonesia' },
-  { value: 'singapore', label: 'Singapore' },
-  { value: 'malaysia', label: 'Malaysia' },
-];
-
-const pendanaanBeasiswa = [
-  { value: 'Beasiswa Penuh', label: 'Beasiswa Penuh' },
-  { value: 'Beasiswa Sebagian', label: 'Beasiswa Sebagian' },
-  { value: 'Beasiswa Ikatan Dinas', label: 'Beasiswa Ikatan Dinas' },
-];
-
-const jenjangBeasiswa = [
-  { value: 's1', label: 'S1' },
-  { value: 's2', label: 'S2' },
-  { value: 's3', label: 'S3' },
-  { value: 'd1', label: 'S1' },
-  { value: 'd2', label: 'S2' },
-  { value: 'd3', label: 'S3' },
-  { value: 'non-degree', label: 'non-degree' },
-];
-
-const majorIndonesia = [
-    { value: 'teknik-informatika', label: 'Teknik Informatika' },
-    { value: 'sistem-informasi', label: 'Sistem Informasi' },
-    { value: 'pendidikan-bahasa-inggris', label: 'Pendidikan Bahasa Inggris' },
-    { value: 'kedokteran', label: 'Kedokteran' },
-];
+import { countries, jenjangBeasiswa, pendanaanBeasiswa, majorIndonesia } from '../data/scholarshipData';
   
 export const PropmtForm = () => {
   return (

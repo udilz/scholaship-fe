@@ -1,11 +1,11 @@
 import { Header } from '@/components/shared/header';
 import React, { ReactNode } from 'react';
 
-interface LayoutProps {
+interface ILayoutProps {
   children: ReactNode;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ children }) => {
+export const Layout= ({ children } : ILayoutProps) => {
   return (
     <main className='h-screen'>
       <Header />
