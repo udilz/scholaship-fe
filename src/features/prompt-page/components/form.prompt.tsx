@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
-import { Bookmark } from 'lucide-react';
 import { countries, jenjangBeasiswa, pendanaanBeasiswa, majorIndonesia } from '../data/scholarshipData';
+import { Card } from './card';
   
 export const PropmtForm = () => {
   return (
@@ -19,33 +19,9 @@ export const PropmtForm = () => {
           </div>
         </section>
         <section className="flex-1 space-y-3 overflow-hidden overflow-y-auto p-5">
-          <Card></Card>
+          <Card title='Devsclae' description='loremm' link='http' openDate='2 september 2024' closeDate='2 september 2024'></Card>
         </section>
       </div>
     </div>
-  );
-};
-
-const Card = () => {
-  return (
-    <section className="rounded-md border-2 px-3 py-2">
-      <header className="flex items-center justify-between">
-        <h2>Devscale</h2>
-        <Button className="rounded-full" iconOnly variant='violet'>
-          <Bookmark size={18} />
-        </Button>
-      </header>
-      <section className="space-y-2">
-        <p className="text-pretty text-[15px]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti porro repellendus reprehenderit accusamus? Corrupti sunt dolore minima nostrum ea dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, a.</p>
-        <a href="#" className="text-blue-600">
-          htttp
-        </a>
-        <p className="space-x-2 text-sm font-normal italic text-slate-500">
-          <span>1 september 2024</span>
-          <span>-</span>
-          <span>1 september 2024</span>
-        </p>
-      </section>
-    </section>
   );
 };

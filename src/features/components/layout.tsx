@@ -1,5 +1,5 @@
-import { Header } from '@/components/shared/header';
 import React, { ReactNode } from 'react';
+import { Navbar } from './navbar';
 
 interface ILayoutProps {
   children: ReactNode;
@@ -8,7 +8,7 @@ interface ILayoutProps {
 export const Layout= ({ children } : ILayoutProps) => {
   return (
     <main className='h-screen'>
-      <Header />
+      <Navbar />
       {children}
     </main>
   );
