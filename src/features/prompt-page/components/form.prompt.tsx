@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
-import { countries, jenjangBeasiswa, pendanaanBeasiswa, majorIndonesia } from '../data/scholarshipData';
+import { countries, jenjangBeasiswa, pendanaanBeasiswa, majorIndonesia } from '../../../data/scholarshipData';
 import { Card } from './card';
   
 export const PropmtForm = () => {
