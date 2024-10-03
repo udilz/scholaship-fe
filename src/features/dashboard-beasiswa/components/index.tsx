@@ -23,7 +23,7 @@ export const DashboardBeasiswa = () => {
                     No
                   </th>
                   <th scope="col" className="px-6 py-3">
-                    Nama
+                    Nama Beasiswa
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Link Beasiswa
