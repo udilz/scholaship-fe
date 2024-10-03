@@ -29,7 +29,7 @@ export const LayoutDashboard = (props: LayoutProps) => {
               </div>
             </main>
           ) : (
-            <main className="w-[calc(100vw-240px)] p-6">
+            <main className="w-[calc(100vw-240px)] overflow-y-scroll px-6">
               <div className="m-auto max-w-6xl">
                 {props.children}
               </div>

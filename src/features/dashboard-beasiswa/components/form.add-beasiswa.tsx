@@ -4,6 +4,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
 import { countries, jenjangBeasiswa, pendanaanBeasiswa, majorIndonesia } from '../../../data/scholarshipData';
+import { InputDate } from './inputDate';
 import React from 'react';
 
 export const FormAddBeasiswa = () => {
@@ -19,8 +20,8 @@ export const FormAddBeasiswa = () => {
             <Select caption="Tipe pendanaan beasiswa" options={pendanaanBeasiswa}></Select>
             <Select caption="jenjang beasiswa" options={jenjangBeasiswa} className="w-3/5"></Select>
             <Select caption="Jurusan" options={majorIndonesia} className="w-3/5"></Select>
-            <Input placeholder="Open date" className='placeholder:text-black' />
-            <Input placeholder="Close date" className='placeholder:text-black' />
+            <InputDate label='Open Date'/>
+            <InputDate label='Close Date'/>           
             <Textarea placeholder="Diskripsi beasiswa" className='placeholder:text-black' rows={6} />
             <Button variant="violet">Submit Product</Button>
           </section>
