@@ -24,7 +24,7 @@ export const FormAddBeasiswa = () => {
               <InputDate label="Open Date" name="openDate" />
               <InputDate label="Close Date" name="closeDate" />
               <Textarea placeholder="Diskripsi beasiswa" name="diskripsi" className="placeholder:text-black" rows={6} />
-              <Button variant="violet">Submit Product</Button>
+              <Button variant="violet">Add</Button>
             </form>
           </section>
         </section>
