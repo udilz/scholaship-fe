@@ -21,7 +21,7 @@ export const Register = () => {
   });
   
   return (
-    <main className="h-full w-full">
+    <main className="font-poppins h-full w-full">
       <Helmet>
         <title>Register</title>
       </Helmet>

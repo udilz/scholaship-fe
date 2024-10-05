@@ -29,7 +29,7 @@ export const Login = () => {
   }
 
   return (
-    <main className="h-full w-full">
+    <main className="font-poppins h-full w-full">
       <Helmet>
         <title>Login</title>
       </Helmet>
@@ -54,7 +54,7 @@ export const Login = () => {
                 Log In
               </Button>
               <form action="http://localhost:8000/api/auth/continue-with-google" method="POST">
-                <Button variant="outline" className="flex w-full items-center justify-center">
+                <Button variant="outline" className="flex w-full justify-center">
                   <div className="flex items-center gap-2">
                     <img src="/images/google.png" alt="" width={15} height={15} />
                     Continue with Google
