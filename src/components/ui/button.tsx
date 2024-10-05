@@ -40,7 +40,7 @@ interface ButtonProps extends TButton, React.ComponentPropsWithRef<'button'> {
 export const Button = (props: ButtonProps) => {
   return (
     <button {...props} className={twMerge(buttonStyle({ ...props }), props.className)}>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1">
         {props.startContent}
         <div>{props.children}</div>
         {props.endContent}

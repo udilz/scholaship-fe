@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
       colors: {
         primary: {
           50: "#eef5ff",
@@ -29,6 +32,7 @@ export default {
           800: "#1e1eaf",
           900: "#1e208a",
           950: "#171754",
+
         },
       },
     },
