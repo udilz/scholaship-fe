@@ -1,17 +1,18 @@
+import { Onboarding } from '@/features/onboarding/components/onboarding';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Propmtpage } from '@/features/prompt-page/components';
-import { Dashboard } from '@/features/dashboard/components';
-import { DashboardBeasiswa } from '@/features/dashboard-beasiswa/components';
-import { FormAddBeasiswa } from '../features/dashboard-beasiswa/components/form.add-beasiswa';
+import { Login } from '@/features/authentication/components/login';
+import { Register } from '@/features/authentication/components/register';
+import { AuthLayout } from '@/features/authentication/components/layouth.auth';
 
 export const AppRouter = () => {
   return (  
     <BrowserRouter>
       <Routes>
-       <Route path='/prompt' element={<Propmtpage/>}></Route>
-       <Route path='/dashboard' element={<Dashboard/>}></Route>
-       <Route path='/dashboard/scholarship' element={<DashboardBeasiswa/>}></Route>
-       <Route path='/dashboard/scholarship/tambah' element={<FormAddBeasiswa/>}></Route>
+      <Route path="/onboarding" element={<Onboarding />} />
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
