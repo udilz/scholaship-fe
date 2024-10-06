@@ -1,12 +1,8 @@
-import { LayoutDashboard } from './layout';
-
 export const Dashboard = () => {
   return (
-    <LayoutDashboard>
-      <section>
+      <section className="mt-4">
         <h3>Welcome back Admin</h3>
         <p>Here is your dashboard...</p>
       </section>
-    </LayoutDashboard>
   );
 };

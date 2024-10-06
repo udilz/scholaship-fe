@@ -14,14 +14,14 @@ export const Navbar = () => {
       </div>
       <div className="flex gap-2">
         <section className='flex gap-2 items-center'>
-        <span>Arie </span>
+        <span>User </span>
         <Link to={'/ptofile'}>
-          <Button className="rounded-full" variant="violet" iconOnly>
+          <Button className="rounded-full" iconOnly>
             <User></User>
           </Button>
         </Link>
        </section>
-        <Button variant="violet">Logout</Button>
+        <Button>Logout</Button>
       </div>
     </header>
   );
@@ -34,7 +34,7 @@ interface IActiveNavLinkProps {
 
 const AtciveNavLink = ({ link, label }: IActiveNavLinkProps) => {
   return (
-    <NavLink to={`/${link}`} className={({ isActive }) => (isActive ? 'font-semibold text-violet-500' : 'text-gray-900 hover:text-violet-500')}>
+    <NavLink to={`/${link}`} className={({ isActive }) => (isActive ? 'font-semibold text-primary-500' : 'text-primary-900 hover:text-primary-500')}>
       {label}
     </NavLink>
   );

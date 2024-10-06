@@ -14,7 +14,7 @@ export const Card = ({title, description, link, openDate, closeDate} : ICardProp
       <section className="rounded-md border-2 px-3 py-2">
         <header className="flex items-center justify-between">
           <h2 className="text-lg">{title}</h2>
-          <Button className="rounded-full" iconOnly variant='violet'>
+          <Button className="rounded-full" iconOnly>
             <Bookmark size={18} />
           </Button>
         </header>

@@ -15,7 +15,7 @@ export const PropmtForm = () => {
             <Select caption='Jurusan' options={majorIndonesia} className="w-3/5"></Select>
           </div>
           <div>
-            <Button className="flex w-full justify-center" variant='violet'>Submit</Button>
+            <Button className="flex w-full justify-center">Submit</Button>
           </div>
         </section>
         <section className="flex-1 space-y-3 overflow-hidden overflow-y-auto p-5">

@@ -1,4 +1,3 @@
-import { LayoutDashboard } from '@/features/dashboard/components/layout';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -49,7 +48,6 @@ export const FormAddBeasiswa = () => {
   };
 
   return (
-    <LayoutDashboard isCentered>
       <main>
         <section className="space-y-4">
           <h3>Tambah Beasiswa</h3>
@@ -92,7 +90,7 @@ export const FormAddBeasiswa = () => {
               <InputDate label="Open Date" onChange={handleChange} name="open_date" />
               <InputDate label="Close Date" onChange={handleChange} name="close_date" />
               <Textarea placeholder="Diskripsi beasiswa"onChange={handleChange} name="description" className="placeholder:text-black" rows={6} />
-              <Button disabled={isLoading} variant="violet">
+              <Button disabled={isLoading} isFullwidth>
                 Add
               </Button>
               {error && <div>{error}</div>}
@@ -101,6 +99,5 @@ export const FormAddBeasiswa = () => {
           </section>
         </section>
       </main>
-    </LayoutDashboard>
   );
 };

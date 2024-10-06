@@ -2,11 +2,11 @@ import { Menu } from './layout.menu';
 import { Home } from 'lucide-react';
 import { Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import React, { ReactNode } from 'react'
+import { Outlet } from 'react-router-dom';
+import React from 'react'
 
 interface LayoutProps {
     isCentered?: boolean;
-    children: ReactNode
   }
 
 export const LayoutDashboard = (props: LayoutProps) => {
@@ -25,13 +25,13 @@ export const LayoutDashboard = (props: LayoutProps) => {
           {props.isCentered ? (
             <main className="w-[calc(100vw-240px)] p-6 overflow-y-auto">
               <div className="m-auto max-w-2xl">
-                {props.children}
+                <Outlet/>
               </div>
             </main>
           ) : (
             <main className="w-[calc(100vw-240px)] overflow-y-scroll px-6">
               <div className="m-auto max-w-6xl">
-                {props.children}
+                <Outlet/>
               </div>
             </main>
           )}
