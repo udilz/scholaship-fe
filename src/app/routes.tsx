@@ -4,6 +4,8 @@ import { Login } from '@/features/authentication/components/login';
 import { Register } from '@/features/authentication/components/register';
 import { AuthLayout } from '@/features/authentication/components/layouth.auth';
 
+import { Propmtpage } from '@/features/prompt-page/components';
+
 export const AppRouter = () => {
   return (  
     <BrowserRouter>
@@ -13,6 +15,7 @@ export const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>
+        <Route path="/prompt" element={<Propmtpage />} />
       </Routes>
     </BrowserRouter>
   );

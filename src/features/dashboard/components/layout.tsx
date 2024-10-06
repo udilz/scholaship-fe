@@ -2,7 +2,6 @@ import { Menu } from './layout.menu';
 import { Home } from 'lucide-react';
 import { Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import React, { ReactNode } from 'react'
 
 interface LayoutProps {
     isCentered?: boolean;
