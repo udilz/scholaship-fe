@@ -16,11 +16,13 @@ const selectStyle = tv({
 interface SelectProps extends React.ComponentPropsWithRef<'select'> {
   caption: string;
   options: Record<string, string>[];
+  onValueChange?: (value: string) => void;
+  value?: string;
 }
 
 export const Select = (props: SelectProps) => {
   return (
-    <RadixSelect.Root>
+    <RadixSelect.Root value={props.value} onValueChange={props.onValueChange}>
       <RadixSelect.Trigger className={twMerge((selectStyle.slots.trigger), props.className)}>
         <RadixSelect.Value placeholder={props.caption} />
         <RadixSelect.Icon className="text-violet11">
