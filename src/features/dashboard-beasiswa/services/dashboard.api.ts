@@ -1,16 +1,4 @@
-interface IScholarship {
-    name: string,
-    description:string ,
-    country: string,
-    city: string ,
-    email: string,
-    url_web: string,
-    degrees: string,
-    major: string,
-    funding_type:string ,
-    open_date:string ,
-    close_date: string
-}
+import { IScholarship } from "../types/scholarship.types";
 
 export async function addBeasiswa({name, description, country, city, email, url_web, degrees, major, funding_type, open_date, close_date} : IScholarship) {
     try {

@@ -1,37 +1,20 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ScholarshipTable } from './scholarship.table';
-import { IDataScholarship } from '../types/scholarship.types';
-import { useEffect, useState } from 'react';
-import { getBeasiswa, deleteBeasiswa } from '../services/dashboard.api';
+import { useDashboard } from '../hooks/useDashboard';
+import { useMutateScholarship } from '../hooks/useMutateScholarship';
 
 export const DashboardBeasiswa = () => {
-  const [data, setData] = useState<IDataScholarship[]>([]);
+  const { data, isLoading, isError } = useDashboard();
+  const { deleteScholarship } = useMutateScholarship();
+  
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const getData = await getBeasiswa();
-        console.log(getData);
-        setData(getData);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchData();
-  }, []);
-
-  const handleDelete = async (id: string) => {
-    const confirmed = confirm('Are you sure you want to delete this scholarship?');
-    if (confirmed) {
-      try {
-        await deleteBeasiswa(id);
-        setData(data.filter((scholarship) => scholarship._id !== id));
-      } catch (error) {
-        console.error('Error deleting scholarship:', error);
-      }
-    }
-  };
+  if (isError) {
+    return <p>Error fetching data</p>;
+  }
 
   return (
     <main className="w-full">
@@ -44,7 +27,9 @@ export const DashboardBeasiswa = () => {
         </Link>
       </section>
       <section className="mt-4">
-        <ScholarshipTable scholarships={data} onDelete={handleDelete}></ScholarshipTable>
+        { data && (
+          <ScholarshipTable scholarships={data} onDelete={deleteScholarship}></ScholarshipTable>
+        )}
       </section>
     </main>
   );
