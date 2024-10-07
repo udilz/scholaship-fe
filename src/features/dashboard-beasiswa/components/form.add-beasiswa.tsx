@@ -53,16 +53,17 @@ export const FormAddBeasiswa = () => {
           <h3>Tambah Beasiswa</h3>
           <section>
             <form onSubmit={handleAddScholarship} action="" className="space-y-3">
-              <Input placeholder="Nama Beasiswa" onChange={handleChange} name="name" className="placeholder:text-black" />
-              <Input placeholder="Link beasiswa" onChange={handleChange} name="url_web" className="placeholder:text-black" />
-              <Input placeholder="City" onChange={handleChange} name="city" className="placeholder:text-black" />
-              <Input placeholder="email" onChange={handleChange} name="email" className="placeholder:text-black"/>
+              <Input placeholder="Nama Beasiswa" onChange={handleChange} name="name" className="placeholder:text-black" required />
+              <Input placeholder="Link beasiswa" onChange={handleChange} name="url_web" className="placeholder:text-black" required />
+              <Input placeholder="City" onChange={handleChange} name="city" className="placeholder:text-black" required />
+              <Input placeholder="email" onChange={handleChange} name="email" className="placeholder:text-black" required/>
               <Select 
                 caption="Negara" 
                 options={countries} 
                 name="country" 
                 onValueChange={(value) => setFormData((prev) => ({ ...prev, country: value }))} 
                 value={formData.country} 
+                required
               />
               <Select 
                 caption="Jenis Pendanaan" 
@@ -70,6 +71,7 @@ export const FormAddBeasiswa = () => {
                 name="funding_type" 
                 onValueChange={(value) => setFormData((prev) => ({ ...prev, funding_type: value }))} 
                 value={formData.funding_type} 
+                required
               />
               <Select 
                 caption="Jenjang Beasiswa" 
@@ -78,6 +80,7 @@ export const FormAddBeasiswa = () => {
                 name="degrees" 
                 onValueChange={(value) => setFormData((prev) => ({ ...prev, degrees: value }))} 
                 value={formData.degrees} 
+                required
               />
               <Select 
                 caption="Jurusan" 
@@ -86,6 +89,7 @@ export const FormAddBeasiswa = () => {
                 name="major" 
                 onValueChange={(value) => setFormData((prev) => ({ ...prev, major: value }))} 
                 value={formData.major} 
+                required
               />
               <InputDate label="Open Date" onChange={handleChange} name="open_date" />
               <InputDate label="Close Date" onChange={handleChange} name="close_date" />
