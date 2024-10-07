@@ -39,6 +39,23 @@ export async function getBeasiswa() {
     }
 }
 
+export async function getBeasiswaById(id:string) {
+    try {
+        const res = await fetch(`http://localhost:8000/api/v1/scholarships/${id}`)
+
+        if (!res.ok) {
+            throw new Error(`Server Error: ${res.status}`);
+        }
+
+        const response = await res.json();
+        console.log(response);
+        return response.data;
+    } catch (error) {
+        console.error('Error adding scholarship:', error); 
+        throw error;  
+    }
+}
+
 export async function  deleteBeasiswa(id: string) {
     try {
         const res = await fetch(`http://localhost:8000/api/v1/scholarships/${id}`, {
@@ -74,7 +91,7 @@ export async function updateBeasiswa(id: string, {name, description, country, ci
         }
 
         const response = await res.json();
-        console.log(response.data);
+        console.log(response);
         return response;
     } catch (error) {
         console.error('Error adding scholarship:', error); 

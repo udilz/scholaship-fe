@@ -1,4 +1,5 @@
-import { IDataScholarship } from "../types/scholarship.types";
+import { IDataScholarship } from '../types/scholarship.types';
+import { Link } from 'react-router-dom';
 
 interface ScholarshipTableProps {
   scholarships: IDataScholarship[];
@@ -57,10 +58,10 @@ export const ScholarshipTable = ({ scholarships, onDelete }: ScholarshipTablePro
                 {scholarship.name}
               </th>
               <td className="px-6 py-4">
-              <a href={scholarship.url_web} target="_blank" rel="noopener noreferrer" className="text-blue-600">
-                {scholarship.url_web}
-              </a>
-             </td>
+                <a href={scholarship.url_web} target="_blank" rel="noopener noreferrer" className="text-blue-600">
+                  {scholarship.url_web}
+                </a>
+              </td>
               <td className="px-6 py-4">{scholarship.country}</td>
               <td className="px-6 py-4">{scholarship.city}</td>
               <td className="px-6 py-4">{scholarship.funding_type}</td>
@@ -70,12 +71,12 @@ export const ScholarshipTable = ({ scholarships, onDelete }: ScholarshipTablePro
               <td className="px-6 py-4">{new Date(scholarship.close_date).toLocaleDateString('id-ID')}</td>
               <td className="px-6 py-4">{scholarship.description}</td>
               <td className="space-x-4 px-6 py-4">
-                <a href="#" className="text-red-500" onClick={()=> onDelete(scholarship._id)}>
+                <a href="#" className="text-red-500" onClick={() => onDelete(scholarship._id)}>
                   delete
                 </a>
-                <a href="#" className="text-blue-600">
-                  edit
-                </a>
+                <Link to={`/dashboard/scholarship/edit/${scholarship._id}`} className="text-blue-600">
+                  update
+                </Link>
               </td>
             </tr>
           ))}

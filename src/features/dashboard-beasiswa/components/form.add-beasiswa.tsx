@@ -53,10 +53,10 @@ export const FormAddBeasiswa = () => {
           <h3>Tambah Beasiswa</h3>
           <section>
             <form onSubmit={handleAddScholarship} action="" className="space-y-3">
-              <Input placeholder="Nama Beasiswa" onChange={handleChange} name="name" className="placeholder:text-black" required />
-              <Input placeholder="Link beasiswa" onChange={handleChange} name="url_web" className="placeholder:text-black" required />
-              <Input placeholder="City" onChange={handleChange} name="city" className="placeholder:text-black" required />
-              <Input placeholder="email" onChange={handleChange} name="email" className="placeholder:text-black" required/>
+              <Input placeholder="Nama Beasiswa" onChange={handleChange} name="name" className="placeholder:text-black" value={formData.name} required />
+              <Input placeholder="Link beasiswa" value={formData.url_web} onChange={handleChange} name="url_web" className="placeholder:text-black" required />
+              <Input placeholder="City" value={formData.city} onChange={handleChange} name="city" className="placeholder:text-black" required />
+              <Input placeholder="email" value={formData.email} onChange={handleChange} name="email" className="placeholder:text-black" required/>
               <Select 
                 caption="Negara" 
                 options={countries} 
@@ -91,9 +91,9 @@ export const FormAddBeasiswa = () => {
                 value={formData.major} 
                 required
               />
-              <InputDate label="Open Date" onChange={handleChange} name="open_date" />
-              <InputDate label="Close Date" onChange={handleChange} name="close_date" />
-              <Textarea placeholder="Diskripsi beasiswa"onChange={handleChange} name="description" className="placeholder:text-black" rows={6} />
+              <InputDate label="Open Date" value={formData.open_date} onChange={handleChange} name="open_date" />
+              <InputDate label="Close Date" value={formData.close_date} onChange={handleChange} name="close_date" />
+              <Textarea placeholder="Diskripsi beasiswa" value={formData.description} onChange={handleChange} name="description" className="placeholder:text-black" rows={6} />
               <Button disabled={isLoading} isFullwidth>
                 Add
               </Button>
