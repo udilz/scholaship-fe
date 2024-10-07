@@ -1,7 +1,14 @@
 export const countries = [
-  { value: 'indonesa', label: 'Indonesia' },
-  { value: 'singapore', label: 'Singapore' },
+  { value: 'brunei', label: 'Brunei' },
+  { value: 'cambodia', label: 'Kamboja' },
+  { value: 'indonesia', label: 'Indonesia' },
+  { value: 'laos', label: 'Laos' },
   { value: 'malaysia', label: 'Malaysia' },
+  { value: 'myanmar', label: 'Myanmar' },
+  { value: 'philippines', label: 'Filipina' },
+  { value: 'singapore', label: 'Singapura' },
+  { value: 'thailand', label: 'Thailand' },
+  { value: 'vietnam', label: 'Vietnam' },
 ];
 
 export const pendanaanBeasiswa = [
@@ -11,12 +18,12 @@ export const pendanaanBeasiswa = [
 ];
 
 export const jenjangBeasiswa = [
-  { value: 's1', label: 'S1' },
-  { value: 's2', label: 'S2' },
-  { value: 's3', label: 'S3' },
-  { value: 'd1', label: 'S1' },
-  { value: 'd2', label: 'S2' },
-  { value: 'd3', label: 'S3' },
+  { value: 'S1', label: 'S1' },
+  { value: 'S2', label: 'S2' },
+  { value: 'S3', label: 'S3' },
+  { value: 'D1', label: 'D1' },
+  { value: 'D2', label: 'D2' },
+  { value: 'D3', label: 'D3' },
   { value: 'non-degree', label: 'non-degree' },
 ];
 

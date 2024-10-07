@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 interface InputDateProps {
   label?: string;
   name?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const InputDate = ( props : InputDateProps) => {
@@ -13,7 +14,7 @@ export const InputDate = ( props : InputDateProps) => {
         {props.label}
         {':'}
       </label>
-      <Input type="date" name={props.name}></Input>
+      <Input type="date" name={props.name} onChange={props.onChange}></Input>
     </div>
   );
 };

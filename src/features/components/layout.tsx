@@ -1,15 +1,12 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Navbar } from './navbar';
+import { Outlet } from 'react-router-dom';
 
-interface ILayoutProps {
-  children: ReactNode;
-}
-
-export const Layout= ({ children } : ILayoutProps) => {
+export const Layout= () => {
   return (
     <main className='h-screen'>
       <Navbar />
-      {children}
+      <Outlet/>
     </main>
   );
 };
