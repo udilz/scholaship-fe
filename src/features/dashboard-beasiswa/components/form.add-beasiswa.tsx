@@ -8,6 +8,7 @@ import { addBeasiswa } from '../services/dashboard.api';
 import { useState } from 'react';
 import React from 'react';
 
+
 export const FormAddBeasiswa = () => {
   const [error, setError] = useState<string>('');
   const [isLoading, setLoading] = useState(false);

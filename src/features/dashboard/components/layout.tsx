@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Outlet } from 'react-router-dom';
 import React from 'react'
 
+
 interface LayoutProps {
     isCentered?: boolean;
   }
