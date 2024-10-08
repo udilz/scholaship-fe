@@ -45,6 +45,15 @@ export const FormEditBeasiswa = () => {
 
   async function handleAddScholarship(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (!formData.country || !formData.funding_type || !formData.degrees || !formData.major) {
+      return setError('Please select all required fields.');
+    }
+
+    if (!formData.open_date || !formData.close_date) {
+      return setError('Please provide both open and close dates.');
+    }
+
     setLoading(true);
 
     console.log(formData);
@@ -56,6 +65,7 @@ export const FormEditBeasiswa = () => {
     }
 
     setSuccess(true);
+    setError('');
     setLoading(false);
   }
 
@@ -80,11 +90,11 @@ export const FormEditBeasiswa = () => {
             <Select caption="Jurusan" options={majorIndonesia} className="w-3/5" name="major" onValueChange={(value) => setFormData((prev) => ({ ...prev, major: value }))} value={formData.major} required />
             <InputDate label="Open Date" value={formData.open_date} onChange={handleChange} name="open_date" />
             <InputDate label="Close Date" value={formData.close_date} onChange={handleChange} name="close_date" />
-            <Textarea placeholder="Diskripsi beasiswa" value={formData.description} onChange={handleChange} name="description" className="placeholder:text-black" rows={6} />
+            <Textarea placeholder="Diskripsi beasiswa" required value={formData.description} onChange={handleChange} name="description" className="placeholder:text-black" rows={6} />
             <Button disabled={isLoading} isFullwidth>
               Edit
             </Button>
-            {error && <div>{error}</div>}
+            {error && <div className='text-center text-base text-red-500'>{error}</div>}
             {isSuccess && <div className="text-center text-base text-emerald-500">data berhasil diedit.</div>}
           </form>
         </section>

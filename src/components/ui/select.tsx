@@ -22,7 +22,7 @@ interface SelectProps extends React.ComponentPropsWithRef<'select'> {
 
 export const Select = (props: SelectProps) => {
   return (
-    <RadixSelect.Root value={props.value} onValueChange={props.onValueChange}>
+    <RadixSelect.Root value={props.value} onValueChange={props.onValueChange} required>
       <RadixSelect.Trigger className={twMerge((selectStyle.slots.trigger), props.className)}>
         <RadixSelect.Value placeholder={props.caption} />
         <RadixSelect.Icon className="text-violet11">
