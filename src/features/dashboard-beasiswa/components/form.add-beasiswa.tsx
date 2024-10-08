@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
 import { countries, jenjangBeasiswa, pendanaanBeasiswa, majorIndonesia } from '../../../data/scholarshipData';
 import { InputDate } from './inputDate';
-import React from 'react';
+
 
 export const FormAddBeasiswa = () => {
   return (
