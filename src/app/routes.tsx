@@ -10,8 +10,6 @@ import { FormAddBeasiswa } from '@/features/dashboard-beasiswa/components/form.a
 import { Layout } from '@/features/components/layout';
 import { Propmtpage } from '@/features/prompt-page/components';
 
-import { Propmtpage } from '@/features/prompt-page/components';
-
 export const AppRouter = () => {
   return (
     <BrowserRouter>
