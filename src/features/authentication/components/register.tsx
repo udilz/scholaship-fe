@@ -39,6 +39,7 @@ export const Register = () => {
               <p className="text-sm">Create an account to continue</p>
             </section>
             <div className="space-y-2">
+              <Input placeholder='Fullname' onChange={(e) => setName(e.target.value)}></Input>
               <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
               <Input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
               <Button disabled={isPending} onClick={() => handleSubmitLogin()} className="flex w-full justify-center">
