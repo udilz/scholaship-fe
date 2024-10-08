@@ -2,24 +2,32 @@ import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
 import { countries, jenjangBeasiswa, pendanaanBeasiswa, majorIndonesia } from '../../../data/scholarshipData';
 import { Card } from './card';
-  
+import { IDataScholarship } from '../types/filter';
+import { useSearch } from '../hooks/useSearch';
+
 export const PropmtForm = () => {
+  const {data, hanldeSearchScholarship, isPending, isError, formData, setFormData} = useSearch()
+
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="flex h-3/4 w-3/4 rounded-md border shadow-md">
         <section className="flex w-5/12 flex-col justify-between border-r-2 p-5">
           <div className="space-y-4">
-            <Select caption="negara" options={countries}></Select>
-            <Select caption="Tipe pendanaan beasiswa" options={pendanaanBeasiswa}></Select>
-            <Select caption="jenjang beasiswa" options={jenjangBeasiswa} className="w-3/5"></Select>
-            <Select caption='Jurusan' options={majorIndonesia} className="w-3/5"></Select>
+            <Select caption="Negara" options={countries} name="country" onValueChange={(value) => setFormData((prev) => ({ ...prev, country: value }))} value={formData.country} required />
+            <Select caption="Jenis Pendanaan" options={pendanaanBeasiswa} name="funding_type" onValueChange={(value) => setFormData((prev) => ({ ...prev, funding_type: value }))} value={formData.funding_type} required />
+            <Select caption="Jenjang Beasiswa" options={jenjangBeasiswa} className="w-3/5" name="degrees" onValueChange={(value) => setFormData((prev) => ({ ...prev, degrees: value }))} value={formData.degrees} required />
+            <Select caption="Jurusan" options={majorIndonesia} className="w-3/5" name="major" onValueChange={(value) => setFormData((prev) => ({ ...prev, major: value }))} value={formData.major} required />
+            <Button disabled={isPending} className="flex w-full justify-center" onClick={() => hanldeSearchScholarship()}>
+              Search
+            </Button>
           </div>
-          <div>
-            <Button className="flex w-full justify-center">Submit</Button>
-          </div>
+          {isError && <div className="text-red-500">An error occurred while fetching data.</div>}
         </section>
         <section className="flex-1 space-y-3 overflow-hidden overflow-y-auto p-5">
-          <Card title='Devsclae' description='loremm' link='http' openDate='2 september 2024' closeDate='2 september 2024'></Card>
+          {isPending ? 'Searching...' : ''}
+          {data?.map((data: IDataScholarship) => {
+            return <Card key={data._id} title={data.name} description={data.description} link={data.url_web} openDate={new Date(data.open_date).toLocaleDateString('id-ID')} closeDate={new Date(data.close_date).toLocaleDateString('id-ID')} city={data.city} country={data.country}></Card>;
+          })}
         </section>
       </div>
     </div>
