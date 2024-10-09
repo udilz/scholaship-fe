@@ -54,12 +54,10 @@ export const ScholarshipTable = ({ scholarships, onDelete }: ScholarshipTablePro
           {scholarships.map((scholarship, index) => (
             <tr key={scholarship._id} className="border-b bg-white">
               <td className="px-6 py-4">{index + 1}</td>
-              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
-                {scholarship.name}
-              </th>
+              <td className="max-w-xs overflow-hidden text-ellipsis whitespace-nowrap px-6 py-4">{scholarship.name.length > 20 ? `${scholarship.name.substring(0, 25)}...` : scholarship.name}</td>
               <td className="px-6 py-4">
                 <a href={scholarship.url_web} target="_blank" rel="noopener noreferrer" className="text-blue-600">
-                  {scholarship.url_web}
+                  {scholarship.url_web}git
                 </a>
               </td>
               <td className="px-6 py-4">{scholarship.country}</td>
@@ -69,7 +67,7 @@ export const ScholarshipTable = ({ scholarships, onDelete }: ScholarshipTablePro
               <td className="px-6 py-4">{scholarship.major}</td>
               <td className="px-6 py-4">{new Date(scholarship.open_date).toLocaleDateString('id-ID')}</td>
               <td className="px-6 py-4">{new Date(scholarship.close_date).toLocaleDateString('id-ID')}</td>
-              <td className="px-6 py-4">{scholarship.description}</td>
+              <td className="block w-96 px-6 py-4">{scholarship.description}</td>
               <td className="space-x-4 px-6 py-4">
                 <a href="#" className="text-red-500" onClick={() => onDelete(scholarship._id)}>
                   delete
